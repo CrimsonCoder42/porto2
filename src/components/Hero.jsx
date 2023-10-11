@@ -123,9 +123,9 @@ const Img = styled.img`
 const Hero = () => {
   return (
     <Section>
-      <Navbar />
-      <Container>
-        <Left>
+      <Navbar /> {/* Navbar component placed at the top */}
+      <Container> {/* Main container */}
+        <Left> {/* Left section of the container */}
           <Title>Think. Make. Solve.</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
@@ -137,12 +137,13 @@ const Hero = () => {
           <Button>Learn More</Button>
         </Left>
         <Right>
-          <Canvas>
-            <Suspense fallback={null}>
-              <OrbitControls enableZoom={false} />
+          <Canvas> {/* Canvas element for rendering 3D objects */}
+            <Suspense fallback={null}> {/* Lazy loading for 3D objects */}
+              <OrbitControls enableZoom={false} /> {/* Disabling zoom on the canvas */}
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
               <Sphere args={[1, 100, 200]} scale={2.4}>
+              {/* ... lighting and Sphere object with MeshDistortMaterial */}
                 <MeshDistortMaterial
                   color="#3d1c56"
                   attach="material"
